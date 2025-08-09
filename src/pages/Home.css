@@ -1,0 +1,240 @@
+.hero {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+  font-family: 'Playfair Display', serif;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 650px;
+  margin-top: 0.5rem;
+  line-height: 1.8;
+  font-family: 'Open Sans', sans-serif;
+  color: #f5f5f5;
+}
+
+.hero button {
+  margin-top: 2rem;
+  padding: 0.9rem 2.5rem;
+  background: #c59f76;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.hero button:hover {
+  background: #a87f5a;
+  transform: translateY(-3px);
+}
+
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive for tablets */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+  .hero button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+}
+
+/* Responsive for phones */
+@media (max-width: 480px) {
+  .hero{
+    height: 50vh;
+    background-position: center top;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .hero button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+  }
+}
+/* Page container for About, Expertise, etc. */
+.page-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  line-height: 1.8;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Title styling */
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #c59f76;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Paragraph text */
+.page-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1.5rem;
+  }
+  .page-title {
+    font-size: 2rem;
+  }
+  .page-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.7rem;
+  }
+  .page-text {
+    font-size: 0.95rem;
+  }
+}
+/* Navbar base */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  padding: 1rem 2rem;
+  font-family: 'Playfair Display', serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #c59f76;
+  letter-spacing: 2px;
+  cursor: default;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #c59f76;
+}
+
+/* Hamburger menu - hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  width: 25px;
+  height: 20px;
+}
+
+.hamburger span {
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger open animation */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background: #eee;
+    flex-direction: column;
+    width: 200px;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    height: calc(100vh - 60px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -3px 0 8px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    color: #444;
+  }
+}
