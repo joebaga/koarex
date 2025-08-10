@@ -1,6 +1,7 @@
 .hero {
   background-size: cover;
   background-position: center;
+  background-image: url('/src/assets/koarex.jpeg');
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -74,8 +75,8 @@
 /* Responsive for phones */
 @media (max-width: 480px) {
   .hero{
-    height: 50vh;
-    background-position: center top;
+    height: 60vh !important;
+    background-image: url('/src/assets/koarex.jpeg');
   }
   .hero h1 {
     font-size: 1.8rem;
@@ -213,6 +214,7 @@
   .hamburger {
     display: flex;
   }
+  
 
   .nav-links {
     position: fixed;
